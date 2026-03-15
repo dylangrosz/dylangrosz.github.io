@@ -277,7 +277,7 @@ strong { font-weight: 700; }
 }
 
 .hero-at {
-  color: var(--accent-light);
+  color: var(--text-muted);
   font-style: italic;
 }
 
