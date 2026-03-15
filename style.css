@@ -287,6 +287,27 @@ strong { font-weight: 700; }
   margin-bottom: 28px;
 }
 
+.hero-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  padding: 7px 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero-resume:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 .hero-links {
   display: flex;
   gap: 20px;
@@ -359,6 +380,16 @@ section.section:nth-of-type(even) {
   font-style: italic;
   margin-top: 24px;
   padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.about-skills {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin-top: 20px;
+  padding-top: 20px;
   border-top: 1px solid var(--border);
 }
 
