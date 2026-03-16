@@ -396,12 +396,11 @@
 
     <nav id="music-nav" aria-label="Music navigation">
       <div class="nav-inner">
-        <a href="#" class="music-nav-logo" id="music-back">DYLAN JACQUES</a>
+        <a href="#" class="music-nav-logo" id="music-back">Dylan Jacques</a>
         <div class="nav-links music-nav-links">
           <a href="#music-home">Home</a>
-          <a href="#music-tracks">Music</a>
-          <a href="#music-about">About</a>
-          <a href="#music-contact">Inquiries</a>
+          <a href="#music-listen">Listen</a>
+          <a href="#music-links">Links</a>
         </div>
       </div>
     </nav>
@@ -409,56 +408,40 @@
     <header id="music-home" class="music-hero">
       <div class="music-hero-content">
         <h1 class="music-artist-name glitch-text" data-text="DYLAN JACQUES">DYLAN JACQUES</h1>
-        <p class="music-tagline">Genre-bending DJ sets &amp; electronic music</p>
-        <div class="music-social-links">
-          <a href="https://soundcloud.com/dylan-grosz" target="_blank" rel="noopener">SoundCloud</a>
-          <a href="https://open.spotify.com/artist/2zmkhGIgvBtoliCLmBRGZq" target="_blank" rel="noopener">Spotify</a>
-          <a href="https://music.apple.com/us/artist/dylan-jacques/1644586122" target="_blank" rel="noopener">Apple Music</a>
-        </div>
+        <p class="music-tagline">i know it's all in my head</p>
       </div>
     </header>
 
-    <section id="music-tracks" class="music-section">
+    <!-- LISTEN -->
+    <section id="music-listen" class="music-section">
       <div class="music-container">
-        <h2 class="music-heading">Music</h2>
-        <div class="tracks-grid">
-          <div class="track-card" data-tilt>
-            <div class="track-artwork"><div class="track-artwork-placeholder"><span>01</span></div></div>
-            <div class="track-info"><h3 class="track-title">Latest Mix</h3><p class="track-meta">2025 &middot; DJ Set</p></div>
-          </div>
-          <div class="track-card" data-tilt>
-            <div class="track-artwork"><div class="track-artwork-placeholder"><span>02</span></div></div>
-            <div class="track-info"><h3 class="track-title">Track Two</h3><p class="track-meta">2024 &middot; Original</p></div>
-          </div>
-          <div class="track-card" data-tilt>
-            <div class="track-artwork"><div class="track-artwork-placeholder"><span>03</span></div></div>
-            <div class="track-info"><h3 class="track-title">Track Three</h3><p class="track-meta">2024 &middot; Remix</p></div>
-          </div>
+        <h2 class="music-heading">Listen</h2>
+        <!-- SoundCloud full profile embed -->
+        <div class="sc-embed">
+          <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F67824496&show_artwork=true&color=%23333333"></iframe>
+        </div>
+        <!-- Spotify embed for ItMotN -->
+        <div class="spotify-embed">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2zmkhGIgvBtoliCLmBRGZq?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
-    <section id="music-about" class="music-section">
+    <!-- LINKS -->
+    <section id="music-links" class="music-section">
       <div class="music-container">
-        <h2 class="music-heading">About</h2>
-        <div class="music-about-content">
-          <p>Dylan Jacques crafts genre-bending DJ sets that blend electronic, house, and experimental sounds. Based between the East Coast and West Coast, drawing inspiration from late-night frequencies and daylight algorithms.</p>
-          <p>By day, a machine learning scientist. By night, the decks.</p>
+        <h2 class="music-heading">Find me</h2>
+        <div class="music-social-links">
+          <a href="https://soundcloud.com/dylan_jacques" target="_blank" rel="noopener">SoundCloud</a>
+          <a href="https://open.spotify.com/artist/2zmkhGIgvBtoliCLmBRGZq" target="_blank" rel="noopener">Spotify</a>
+          <a href="https://music.apple.com/us/artist/dylan-jacques/1644586122" target="_blank" rel="noopener">Apple Music</a>
         </div>
-      </div>
-    </section>
-
-    <section id="music-contact" class="music-section">
-      <div class="music-container">
-        <h2 class="music-heading">Show Inquiries</h2>
-        <p class="music-contact-text">For bookings and collaborations:</p>
-        <a href="mailto:booking@dylanjacques.name" class="music-contact-btn">Get in Touch</a>
       </div>
     </section>
 
     <footer id="music-footer">
       <div class="music-container">
-        <button id="back-to-pro" class="back-link">&larr; Back to the day job</button>
+        <button id="back-to-pro" class="back-link">&larr; back to the day job</button>
       </div>
     </footer>
 

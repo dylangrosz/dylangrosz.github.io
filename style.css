@@ -946,13 +946,13 @@ a.callout-card:hover {
 }
 
 .glitch-text::before {
-  color: #0ff;
+  color: rgba(255,255,255,0.6);
   animation: glitch-1 3s infinite linear alternate-reverse;
   clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
 }
 
 .glitch-text::after {
-  color: #f0f;
+  color: rgba(255,255,255,0.4);
   animation: glitch-2 2s infinite linear alternate-reverse;
   clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
 }
@@ -1033,6 +1033,17 @@ a.callout-card:hover {
   margin-bottom: 40px;
 }
 
+
+/* EMBEDS */
+.sc-embed {
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.spotify-embed {
+  margin-bottom: 24px;
+}
 
 /* TRACKS GRID */
 .tracks-grid {
