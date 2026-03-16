@@ -64,7 +64,6 @@
       currentView = view;
       document.body.style.background = view === 'music' ? '#0a0a0a' : '#fafaf8';
       window.scrollTo(0, 0);
-      if (view === 'music') loadMusicEmbeds();
       return;
     }
 
@@ -106,9 +105,6 @@
       currentView = targetView;
       document.body.style.background = targetView === 'music' ? '#0a0a0a' : '#fafaf8';
       window.scrollTo(0, 0);
-
-      // Load embeds when switching to music
-      if (targetView === 'music') loadMusicEmbeds();
 
       // Update URL
       var path = targetView === 'music' ? '/music' : '/';
@@ -366,42 +362,6 @@
         artwork.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
       });
     });
-  }
-
-
-  // ─── Lazy-Load Music Embeds ──────────────────────
-
-  var embedsLoaded = false;
-
-  function loadMusicEmbeds() {
-    if (embedsLoaded) return;
-    embedsLoaded = true;
-
-    var scContainer = document.getElementById('sc-embed-container');
-    if (scContainer && scContainer.dataset.src) {
-      var scIframe = document.createElement('iframe');
-      scIframe.width = '100%';
-      scIframe.height = '450';
-      scIframe.scrolling = 'no';
-      scIframe.frameBorder = 'no';
-      scIframe.allow = 'autoplay';
-      scIframe.src = scContainer.dataset.src;
-      scContainer.appendChild(scIframe);
-    }
-
-    var spotifyContainer = document.getElementById('spotify-embed-container');
-    if (spotifyContainer && spotifyContainer.dataset.src) {
-      var spIframe = document.createElement('iframe');
-      spIframe.style.borderRadius = '12px';
-      spIframe.width = '100%';
-      spIframe.height = '152';
-      spIframe.frameBorder = '0';
-      spIframe.allowFullscreen = true;
-      spIframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-      spIframe.loading = 'lazy';
-      spIframe.src = spotifyContainer.dataset.src;
-      spotifyContainer.appendChild(spIframe);
-    }
   }
 
 
