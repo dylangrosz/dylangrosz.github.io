@@ -176,6 +176,17 @@ strong { font-weight: 700; }
 
 .nav-links a:hover { color: var(--accent); }
 
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transition: width 0.25s var(--ease-out);
+}
+
+.nav-links a:hover::after { width: 100%; }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -220,6 +231,12 @@ strong { font-weight: 700; }
   border-radius: 50%;
   overflow: hidden;
   cursor: default;
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent-light);
+  transition: box-shadow 0.3s var(--ease-out);
+}
+
+.hero-photo-wrapper:hover {
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent), 0 8px 24px rgba(92, 107, 79, 0.15);
 }
 
 .hero-photo {
@@ -461,7 +478,7 @@ section.section:nth-of-type(even) {
 }
 
 /* Brand-colored timeline markers */
-[data-brand="apple"] .timeline-marker    { border-color: #555; background: #f5f5f5; }
+[data-brand="apple"] .timeline-marker    { border-color: #333; background: #f5f5f5; }
 [data-brand="paypal"] .timeline-marker   { border-color: #003087; background: #eef3fb; }
 [data-brand="stanford"] .timeline-marker { border-color: #8C1515; background: #fdf0f0; }
 [data-brand="stanford-daily"] .timeline-marker { border-color: #8C1515; background: #fdf0f0; }
@@ -494,7 +511,7 @@ a.callout-card:hover {
   color: var(--text);
 }
 
-.callout-card svg {
+.callout-icon {
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -579,6 +596,17 @@ a.callout-card:hover {
   position: absolute;
   left: 0;
   color: var(--accent-light);
+}
+
+.timeline-details a {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-light);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s;
+}
+
+.timeline-details a:hover {
+  text-decoration-color: var(--accent);
 }
 
 
@@ -680,6 +708,12 @@ a.callout-card:hover {
   flex-wrap: wrap;
   gap: 16px;
   align-items: flex-start;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.education-card:hover {
+  border-color: var(--accent-light);
+  box-shadow: 0 2px 12px rgba(92, 107, 79, 0.08);
 }
 
 .edu-icon {
@@ -809,6 +843,11 @@ a.callout-card:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Stagger siblings */
+.reveal.visible:nth-child(2) { transition-delay: 0.08s; }
+.reveal.visible:nth-child(3) { transition-delay: 0.16s; }
+.reveal.visible:nth-child(4) { transition-delay: 0.24s; }
 
 
 /* ═══════════════════════════════════════════════════
