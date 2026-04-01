@@ -10,6 +10,8 @@
   var keystrokeBuffer = '';
   var keystrokeTimer = null;
   var TRIGGER_WORD = 'music';
+  var transitioning = false;
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ─── DOM refs ───────────────────────────────────
   var proSection = document.getElementById('professional');
@@ -45,7 +47,6 @@
     setupKeystrokeListener();
     setupPhotoTrigger();
     setupMusicBackLinks();
-    setupTiltEffect();
 
     window.addEventListener('popstate', handlePopState);
   }
@@ -72,6 +73,9 @@
   }
 
   function transitionTo(targetView, originX, originY) {
+    if (transitioning) return;
+    transitioning = true;
+
     // Default origin: center of viewport
     if (originX === undefined) originX = window.innerWidth / 2;
     if (originY === undefined) originY = window.innerHeight / 2;
@@ -86,7 +90,6 @@
     // If going to music, spin the photo first
     if (targetView === 'music' && heroPhoto) {
       heroPhoto.classList.add('spinning');
-      // Start circle expansion after brief vinyl spin
       setTimeout(function () {
         expandCircle(targetView);
       }, 500);
@@ -106,6 +109,12 @@
       document.body.style.background = targetView === 'music' ? '#0a0a0a' : '#fafaf8';
       window.scrollTo(0, 0);
 
+      // Move focus to the new view's heading
+      var targetHeading = targetView === 'music'
+        ? document.querySelector('#music-home h1')
+        : document.querySelector('#hero h1');
+      if (targetHeading) targetHeading.focus();
+
       // Update URL
       var path = targetView === 'music' ? '/music' : '/';
       history.pushState({ view: targetView }, '', path);
@@ -115,6 +124,7 @@
     setTimeout(function () {
       circle.className = 'transition-circle';
       if (heroPhoto) heroPhoto.classList.remove('spinning');
+      transitioning = false;
     }, 900);
   }
 
@@ -147,7 +157,7 @@
         var href = this.getAttribute('href');
         if (href === '#') {
           e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
           return;
         }
         var target = document.querySelector(href);
@@ -157,7 +167,7 @@
           var openNav = document.querySelector('.nav-links.open');
           if (openNav) openNav.classList.remove('open');
 
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
         }
       });
     });
@@ -195,9 +205,7 @@
       '.pub-card',
       '.education-card',
       '.about-content',
-      '.contact-links',
-      '.track-card',
-      '.music-about-content'
+      '.contact-links'
     ];
 
     selectors.forEach(function (sel) {
@@ -337,31 +345,6 @@
         transitionTo('professional');
       });
     }
-  }
-
-
-  // ─── 3D Tilt Effect on Track Cards ──────────────
-
-  function setupTiltEffect() {
-    document.querySelectorAll('[data-tilt]').forEach(function (card) {
-      var artwork = card.querySelector('.track-artwork');
-      if (!artwork) return;
-
-      card.addEventListener('mousemove', function (e) {
-        var rect = card.getBoundingClientRect();
-        var x = (e.clientX - rect.left) / rect.width;
-        var y = (e.clientY - rect.top) / rect.height;
-        var rotateY = (x - 0.5) * 20;
-        var rotateX = (0.5 - y) * 20;
-
-        artwork.style.transform =
-          'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
-      });
-
-      card.addEventListener('mouseleave', function () {
-        artwork.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
-      });
-    });
   }
 
 

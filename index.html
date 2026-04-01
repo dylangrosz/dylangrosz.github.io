@@ -45,7 +45,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Lusitana:wght@400;700&family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Lusitana:wght@400;700&family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -63,12 +63,12 @@
         <a href="#" class="nav-logo" id="nav-logo">
           <span class="nav-logo-mark">D</span>G
         </a>
-        <div class="nav-links" id="nav-links" role="list">
-          <a href="#about" role="listitem">About</a>
-          <a href="#experience" role="listitem">Experience</a>
-          <a href="#research" role="listitem">Research</a>
-          <a href="#contact" role="listitem">Say Hello</a>
-        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#contact">Say Hello</a></li>
+        </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -84,7 +84,7 @@
             <img src="assets/images/profile.jpg" alt="Dylan Grosz" class="hero-photo" id="hero-photo" width="397" height="397">
             <div class="photo-vinyl-overlay" id="vinyl-overlay" aria-hidden="true"></div>
           </div>
-          <h1 class="hero-name" id="hero-name">Dylan Grosz</h1>
+          <h1 class="hero-name" id="hero-name" tabindex="-1">Dylan Grosz</h1>
           <p class="hero-title">Machine Learning Scientist <span class="hero-at">at</span> Apple</p>
           <p class="hero-subtitle">On-device AI for Siri &middot; Stanford &rsquo;20</p>
           <a href="assets/Dylan_Grosz_Resume.pdf" class="hero-resume" download>
@@ -289,7 +289,7 @@
                 </div>
               </div>
               <h3 class="pub-title">Predicting Livelihood Indicators from Community-Generated Street-Level Imagery</h3>
-              <p class="pub-desc">Novel Graph Convolutional Network using computer vision on crowdsourced images to predict wealth and health assets in developing regions, with explainable Random Forest classification. With Stefano Ermon, David Lobell, and Marshall Burke at the <a href="https://sustain.stanford.edu" target="_blank" rel="noopener">Sustainability &amp; AI Lab</a>.</p>
+              <p class="pub-desc">Novel Graph Convolutional Network using computer vision on crowdsourced images to predict wealth and health assets in developing regions, with explainable Random Forest classification. With Stefano Ermon, David Lobell, and Marshall Burke at the <a href="https://cs.stanford.edu/~ermon/" target="_blank" rel="noopener">Sustainability &amp; AI Lab</a>.</p>
             </article>
 
             <article class="pub-card">
@@ -408,7 +408,7 @@
 
     <header id="music-home" class="music-hero">
       <div class="music-hero-content">
-        <h1 class="music-artist-name glitch-text" data-text="DYLAN JACQUES">DYLAN JACQUES</h1>
+        <h1 class="music-artist-name glitch-text" data-text="DYLAN JACQUES" tabindex="-1">DYLAN JACQUES</h1>
         <p class="music-tagline">i know it's all in my head</p>
       </div>
     </header>
@@ -418,10 +418,10 @@
       <div class="music-container">
         <h2 class="music-heading">Listen</h2>
         <div class="sc-embed">
-          <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F67824496&show_artwork=true&color=%23333333"></iframe>
+          <iframe title="SoundCloud player — Dylan Jacques" width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F67824496&show_artwork=true&color=%23333333"></iframe>
         </div>
         <div class="spotify-embed">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2zmkhGIgvBtoliCLmBRGZq?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <iframe title="Spotify player — Dylan Jacques" style="border-radius:12px" src="https://open.spotify.com/embed/artist/2zmkhGIgvBtoliCLmBRGZq?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         </div>
       </div>
     </section>
