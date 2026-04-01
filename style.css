@@ -107,18 +107,18 @@ strong { font-weight: 700; }
    ═══════════════════════════════════════════════════ */
 
 .section-view {
-  position: absolute;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  position: absolute;
   width: 100%;
 }
 
 .section-view.active {
-  position: relative;
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+  position: relative;
 }
 
 
