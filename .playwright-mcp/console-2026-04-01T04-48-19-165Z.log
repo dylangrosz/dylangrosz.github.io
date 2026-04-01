@@ -1,3 +1,0 @@
-[      64ms] [WARNING] Allow attribute will take precedence over 'allowfullscreen'. @ http://localhost:8080/:422
-[    1400ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/favicon.ico:0
-[    1789ms] [LOG] SoundCloud Embed Player (api-web) @ https://widget.sndcdn.com/widget-9-52e4c81ec4a3.js:54
