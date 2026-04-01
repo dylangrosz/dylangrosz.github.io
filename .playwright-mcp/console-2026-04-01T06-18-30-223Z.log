@@ -1,0 +1,2 @@
+[      66ms] [WARNING] Allow attribute will take precedence over 'allowfullscreen'. @ http://localhost:8080/:422
+[    1026ms] [LOG] SoundCloud Embed Player (api-web) @ https://widget.sndcdn.com/widget-9-52e4c81ec4a3.js:54
