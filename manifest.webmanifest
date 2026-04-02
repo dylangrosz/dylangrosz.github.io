@@ -1,0 +1,16 @@
+{
+  "name": "Dylan Grosz",
+  "short_name": "Dylan Grosz",
+  "description": "ML Scientist at Apple specializing in speaker recognition and voice trigger for Siri, serving 1B+ devices across 40+ locales. Stanford '20.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fafaf8",
+  "theme_color": "#5c6b4f",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

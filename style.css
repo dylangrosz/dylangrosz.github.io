@@ -402,6 +402,14 @@ section.section:nth-of-type(even) {
   border-radius: 2px;
 }
 
+.section-subheading {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: -28px;
+  margin-bottom: 32px;
+  letter-spacing: 0.01em;
+}
+
 
 /* ═══════════════════════════════════════════════════
    ABOUT
@@ -496,10 +504,6 @@ section.section:nth-of-type(even) {
 [data-brand="paypal"] .timeline-marker   { border-color: #003087; background: #eef3fb; }
 [data-brand="stanford"] .timeline-marker { border-color: #8C1515; background: #fdf0f0; }
 [data-brand="stanford-daily"] .timeline-marker { border-color: #8C1515; background: #fdf0f0; }
-
-.timeline-item:first-child .timeline-marker {
-  background: #f5f5f5;
-}
 
 /* Callout cards (patent, publications) */
 .callout-card {
@@ -682,6 +686,18 @@ a.callout-card:hover {
   color: var(--text-muted);
   margin-bottom: 12px;
   line-height: 1.6;
+}
+
+.pub-desc a {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-light);
+  text-underline-offset: 2px;
+  color: var(--accent);
+  transition: text-decoration-color 0.2s;
+}
+
+.pub-desc a:hover {
+  text-decoration-color: var(--accent);
 }
 
 .pub-meta-row {
@@ -1202,6 +1218,59 @@ a.callout-card:hover {
 
   .music-social-links { flex-wrap: wrap; }
 }
+
+/* ═══════════════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════════════ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #111211;
+    --bg-alt:      #181918;
+    --text:        #e4e4e0;
+    --text-muted:  #8a8a84;
+    --accent:      #8a9a7b;
+    --accent-light:#a8b89a;
+    --accent-bg:   #1c2119;
+    --border:      #2a2a26;
+  }
+
+  #main-nav {
+    background: rgba(17, 18, 17, 0.9);
+  }
+
+  .nav-links.open:not(.music-nav-links) {
+    background: rgba(17, 18, 17, 0.98);
+    border-bottom-color: var(--border);
+  }
+
+  [data-brand="apple"] .timeline-marker    { background: #1e1e1e; border-color: #777; }
+  [data-brand="paypal"] .timeline-marker   { background: #0d1520; border-color: #4a7fc0; }
+  [data-brand="stanford"] .timeline-marker,
+  [data-brand="stanford-daily"] .timeline-marker { background: #1a0e0e; border-color: #b55050; }
+
+  .pub-citations {
+    background: rgba(138, 154, 123, 0.12);
+    border-color: rgba(138, 154, 123, 0.25);
+  }
+
+  /* Callout cards: inline brand colors have near-zero contrast on dark --accent-bg */
+  a.callout-card strong { color: var(--text) !important; }
+  a.callout-card .callout-icon { stroke: var(--accent) !important; }
+  a.callout-card { border-left-color: var(--accent) !important; }
+
+  /* Filled buttons: --accent (#8a9a7b) on white text is 3.0:1, fails WCAG AA */
+  .contact-btn:not(.contact-btn--outline) { background: #5c6b4f; }
+  .contact-btn:not(.contact-btn--outline):hover { background: #4a5740; }
+  .hero-resume:hover { background: #5c6b4f; color: #fff; }
+
+  /* Timeline company names: inline brand colors fail contrast on dark --bg */
+  [data-brand="apple"] .timeline-company         { color: #9a9a9a !important; }
+  [data-brand="paypal"] .timeline-company        { color: #6b9fd4 !important; }
+  [data-brand="stanford"] .timeline-company,
+  [data-brand="stanford-daily"] .timeline-company { color: #d06060 !important; }
+}
+
 
 /* ═══════════════════════════════════════════════════
    PRINT

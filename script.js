@@ -12,6 +12,9 @@
   var TRIGGER_WORD = 'music';
   var transitioning = false;
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var darkMql = window.matchMedia('(prefers-color-scheme: dark)');
+  var prefersDark = darkMql.matches;
+  darkMql.addEventListener('change', function (e) { prefersDark = e.matches; });
 
   // ─── DOM refs ───────────────────────────────────
   var proSection = document.getElementById('professional');
@@ -63,7 +66,7 @@
       proSection.classList.toggle('active', view === 'professional');
       musicSection.classList.toggle('active', view === 'music');
       currentView = view;
-      document.body.style.background = view === 'music' ? '#0a0a0a' : '#fafaf8';
+      document.body.style.background = view === 'music' ? '#0a0a0a' : (prefersDark ? '#111211' : '#fafaf8');
       window.scrollTo(0, 0);
       return;
     }
@@ -106,7 +109,7 @@
       proSection.classList.toggle('active', targetView === 'professional');
       musicSection.classList.toggle('active', targetView === 'music');
       currentView = targetView;
-      document.body.style.background = targetView === 'music' ? '#0a0a0a' : '#fafaf8';
+      document.body.style.background = targetView === 'music' ? '#0a0a0a' : (prefersDark ? '#111211' : '#fafaf8');
       window.scrollTo(0, 0);
 
       // Move focus to the new view's heading
