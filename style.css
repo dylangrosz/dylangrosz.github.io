@@ -1186,3 +1186,16 @@ a.callout-card:hover {
 
   .music-social-links { flex-wrap: wrap; }
 }
+
+/* ═══════════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════════ */
+
+@media print {
+  nav, .transition-overlay, .keystroke-hint, #music, footer { display: none; }
+  .reveal { opacity: 1; transform: none; }
+  .section { padding: 16px 0; }
+  body { font-size: 12pt; background: #fff; }
+  a { color: inherit; text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+}
