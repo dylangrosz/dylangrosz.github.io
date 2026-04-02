@@ -1,20 +1,26 @@
 # Dylan Grosz
 
-> Machine Learning Scientist at Apple, building on-device AI for Siri.
+> ML Scientist at Apple specializing in speaker recognition and voice trigger for Siri, serving 1B+ active devices across 40+ locales. Stanford '20. 90 research citations. Patent pending.
 
 ## About
 - Stanford University, B.S. Symbolic Systems (AI concentration), 2020
-- 5+ years ML experience: speaker recognition, NLP, computer vision
-- On-device ML across 6 Apple platforms, 40+ languages
-- U.S. Patent Application 20220383324 (predictive autoscaling)
+- On-device ML across 6 Apple platforms (iPhone, Mac, HomePod, Apple TV, Apple Watch, Vision Pro), 40+ locales, 1B+ active devices
+- Specialization: speaker recognition, voice trigger, model evaluation, Bayesian optimization, fairness in ML
+- U.S. Patent Application 20220383324 (predictive autoscaling via sequence modeling)
 
-## Research
-- [AAAI 2021] Predicting Livelihood Indicators from Community-Generated Street-Level Imagery
-- [PAKDD 2020] Automatic Detection of Sexist Statements Commonly Used at the Workplace
-- [Computation + Journalism 2020] Disarming Loaded Words: Addressing Gender Bias in Political Reporting
+## Research (90 total citations)
+- [AAAI 2021, 31 citations] Predicting Livelihood Indicators from Community-Generated Street-Level Imagery
+- [PAKDD 2020, 53 citations] Automatic Detection of Sexist Statements Commonly Used at the Workplace
+- [Computation + Journalism 2020, 6 citations] Disarming Loaded Words: Addressing Gender Bias in Political Reporting
+- Google Scholar: https://scholar.google.com/citations?user=DpsEpaoAAAAJ
+
+## Experience
+- Machine Learning Scientist, Apple Siri (Sep 2021 – Present)
+- Machine Learning Engineer / Software Engineer, PayPal (Jul 2020 – Aug 2021)
+- Software Engineering Intern, PayPal (Summers 2017–2019)
 
 ## Links
 - Website: https://dylangrosz.github.io
 - LinkedIn: https://linkedin.com/in/dylangrosz
 - GitHub: https://github.com/dylangrosz
-- Google Scholar: https://scholar.google.com/citations?user=DpsEpaoAAAAJ
+- Email: dylangrosz@gmail.com
