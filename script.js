@@ -155,6 +155,21 @@
       }
     });
 
+    // Close mobile nav on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        var openNav = document.querySelector('.nav-links.open');
+        if (openNav) {
+          openNav.classList.remove('open');
+          var toggle = openNav.closest('.nav-inner').querySelector('.nav-toggle');
+          if (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+          }
+        }
+      }
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       link.addEventListener('click', function (e) {

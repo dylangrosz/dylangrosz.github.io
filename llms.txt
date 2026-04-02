@@ -1,0 +1,20 @@
+# Dylan Grosz
+
+> Machine Learning Scientist at Apple, building on-device AI for Siri.
+
+## About
+- Stanford University, B.S. Symbolic Systems (AI concentration), 2020
+- 5+ years ML experience: speaker recognition, NLP, computer vision
+- On-device ML across 6 Apple platforms, 40+ languages
+- U.S. Patent Application 20220383324 (predictive autoscaling)
+
+## Research
+- [AAAI 2021] Predicting Livelihood Indicators from Community-Generated Street-Level Imagery
+- [PAKDD 2020] Automatic Detection of Sexist Statements Commonly Used at the Workplace
+- [Computation + Journalism 2020] Disarming Loaded Words: Addressing Gender Bias in Political Reporting
+
+## Links
+- Website: https://dylangrosz.github.io
+- LinkedIn: https://linkedin.com/in/dylangrosz
+- GitHub: https://github.com/dylangrosz
+- Google Scholar: https://scholar.google.com/citations?user=DpsEpaoAAAAJ

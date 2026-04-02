@@ -3,3 +3,5 @@
 screenshots/
 .playwright-mcp/
 *.png
+!apple-touch-icon.png
+!assets/icons/stanford-daily.png
