@@ -92,6 +92,7 @@ body {
   color: var(--text);
   background: var(--bg);
   overflow-x: hidden;
+  position: relative;
 }
 
 a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
@@ -1175,6 +1176,7 @@ a.callout-card:hover {
     border-bottom: 1px solid #1a1a1a;
   }
   .nav-toggle { display: flex; }
+  .music-nav-toggle span { background: var(--music-muted); }
 
   .hero-name { font-size: 2rem; }
   .section { padding: 60px 20px; }
@@ -1186,8 +1188,6 @@ a.callout-card:hover {
 
   .contact-links { flex-direction: column; }
   .contact-btn { text-align: center; }
-
-  .tracks-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 
   .music-social-links { flex-wrap: wrap; }
 }

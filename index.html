@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dylan Grosz — Machine Learning Scientist</title>
-  <meta name="description" content="Dylan Grosz is a Machine Learning Scientist at Apple, specializing in on-device AI for Siri. Stanford Symbolic Systems graduate with published research in NLP, computer vision, and AI for social good.">
-  <link rel="canonical" href="https://dylangrosz.com">
+  <meta name="description" content="Dylan Grosz — Machine Learning Scientist at Apple, building on-device AI for Siri. Stanford '20. Published research in NLP, computer vision, and AI for social good.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://dylangrosz.github.io">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Open Graph -->
@@ -16,6 +17,8 @@
   <meta property="og:image" content="https://dylangrosz.github.io/assets/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dylan Grosz">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -28,11 +31,15 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://dylangrosz.github.io/#person",
     "name": "Dylan Grosz",
+    "description": "Machine Learning Scientist at Apple, building on-device AI for Siri. Stanford Symbolic Systems graduate with published research in NLP, computer vision, and AI for social good.",
     "jobTitle": "Machine Learning Scientist",
     "worksFor": { "@type": "Organization", "name": "Apple" },
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Stanford University" },
-    "url": "https://dylangrosz.com",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Stanford University", "url": "https://www.stanford.edu" },
+    "url": "https://dylangrosz.github.io",
+    "image": "https://dylangrosz.github.io/assets/images/profile.jpg",
+    "email": "mailto:dylangrosz@gmail.com",
     "sameAs": [
       "https://www.linkedin.com/in/dylangrosz",
       "https://github.com/dylangrosz",
@@ -114,10 +121,10 @@
           <h2 class="section-heading">About</h2>
           <div class="about-content">
             <p>I'm a Machine Learning Scientist at <strong>Apple</strong>, where I work on Siri's voice trigger and speaker recognition systems. I build and deploy on-device ML models across every Apple platform — scaling personalized voice recognition to <strong class="metric">40+ languages</strong> worldwide. My current work is proprietary — it spans model training, evaluation infrastructure, fairness research, and deployment across six Apple platforms.</p>
-            <p>I hold a degree in <strong>Symbolic Systems</strong> with an AI concentration from <strong>Stanford University</strong>, where I published research on detecting workplace sexism and leveraging computer vision to predict livelihood indicators in developing regions.</p>
-            <p>Previously at <strong>PayPal</strong>, I secured a patent for a sequence modeling approach to predict and autoscale server resources, and founded the company's internal Machine Learning Guild.</p>
+            <p>I hold a degree in <strong>Symbolic Systems</strong> with an AI concentration from <strong>Stanford University</strong>, where I published research on detecting workplace sexism and using computer vision to predict livelihood indicators in developing regions.</p>
+            <p>Previously at <strong>PayPal</strong>, I filed a patent application for a sequence modeling approach to predict and autoscale server resources, and founded the company's internal Machine Learning Guild.</p>
             <p class="about-skills">Python &middot; PyTorch &middot; On-Device ML &middot; Speaker Recognition &middot; NLP &middot; Computer Vision &middot; Model Evaluation &amp; Deployment &middot; Fairness in ML</p>
-            <p class="about-coda">My work is driven by a commitment to applying cutting-edge AI to create more impactful, intuitive, and equitable user experiences.</p>
+            <p class="about-coda">I care about building AI that works well for everyone.</p>
             <p class="about-interests">When I'm not training models, I'm playing guitar, listening to music, watching Stade Rennais FC, and using oxford commas.</p>
           </div>
         </div>
@@ -180,7 +187,7 @@
                 <a href="https://patents.justia.com/patent/20220383324" target="_blank" rel="noopener" class="callout-card" style="border-left-color: #003087;">
                   <svg class="callout-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#003087" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                   <div>
-                    <strong style="color: #003087;">U.S. Patent 20220383324</strong> — Sequence modeling approach for predictive autoscaling of server resources
+                    <strong style="color: #003087;">U.S. Patent Application 20220383324</strong> — Sequence modeling approach for predictive autoscaling of server resources
                   </div>
                 </a>
                 <ul class="timeline-details">
@@ -401,11 +408,14 @@
     <nav id="music-nav" aria-label="Music navigation">
       <div class="nav-inner">
         <a href="#" class="music-nav-logo" id="music-back">Dylan Jacques</a>
-        <div class="nav-links music-nav-links">
-          <a href="#music-home">Home</a>
-          <a href="#music-listen">Listen</a>
-          <a href="#music-links">Links</a>
-        </div>
+        <ul class="nav-links music-nav-links" id="music-nav-links">
+          <li><a href="#music-home">Home</a></li>
+          <li><a href="#music-listen">Listen</a></li>
+          <li><a href="#music-links">Links</a></li>
+        </ul>
+        <button class="nav-toggle music-nav-toggle" id="music-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="music-nav-links">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
@@ -443,7 +453,7 @@
 
     <footer id="music-footer">
       <div class="music-container">
-        <button id="back-to-pro" class="back-link">&larr; back to the day job</button>
+        <button type="button" id="back-to-pro" class="back-link">&larr; back to the day job</button>
       </div>
     </footer>
 

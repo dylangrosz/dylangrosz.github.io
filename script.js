@@ -22,6 +22,7 @@
   var heroName = document.getElementById('hero-name');
   var keystrokeHint = document.getElementById('keystroke-hint');
   var navToggle = document.getElementById('nav-toggle');
+  var musicNavToggle = document.getElementById('music-nav-toggle');
   var backBtn = document.getElementById('back-to-pro');
   var musicBack = document.getElementById('music-back');
 
@@ -33,12 +34,11 @@
         window.location.hash === '#/music' ||
         params.get('view') === 'music') {
       showView('music', false);
-      // Clean up query param
-      if (params.get('view') === 'music') {
-        history.replaceState({ view: 'music' }, '', '/music');
-      }
+      // Ensure history state is set and URL is clean
+      history.replaceState({ view: 'music' }, '', '/music');
     } else {
       showView('professional', false);
+      history.replaceState({ view: 'professional' }, '', '/');
     }
 
     setupNavigation();
@@ -54,7 +54,7 @@
 
   // ─── View Switching ─────────────────────────────
 
-  function showView(view, animated) {
+  function showView(view, animated, skipPush) {
     if (animated === undefined) animated = true;
     if (view === currentView && proSection.classList.contains('active')) return;
 
@@ -69,10 +69,10 @@
     }
 
     // Animated transition
-    transitionTo(view);
+    transitionTo(view, undefined, undefined, skipPush);
   }
 
-  function transitionTo(targetView, originX, originY) {
+  function transitionTo(targetView, originX, originY, skipPush) {
     if (transitioning) return;
     transitioning = true;
 
@@ -91,14 +91,14 @@
     if (targetView === 'music' && heroPhoto) {
       heroPhoto.classList.add('spinning');
       setTimeout(function () {
-        expandCircle(targetView);
+        expandCircle(targetView, skipPush);
       }, 500);
     } else {
-      expandCircle(targetView);
+      expandCircle(targetView, skipPush);
     }
   }
 
-  function expandCircle(targetView) {
+  function expandCircle(targetView, skipPush) {
     circle.classList.add('expanding');
 
     // Halfway through, swap the views
@@ -115,9 +115,11 @@
         : document.querySelector('#hero h1');
       if (targetHeading) targetHeading.focus();
 
-      // Update URL
-      var path = targetView === 'music' ? '/music' : '/';
-      history.pushState({ view: targetView }, '', path);
+      // Update URL (skip during popstate to avoid corrupting history)
+      if (!skipPush) {
+        var path = targetView === 'music' ? '/music' : '/';
+        history.pushState({ view: targetView }, '', path);
+      }
     }, 400);
 
     // Collapse circle after transition complete
@@ -130,11 +132,11 @@
 
   function handlePopState(e) {
     if (e.state && e.state.view) {
-      showView(e.state.view, true);
+      showView(e.state.view, true, true);
     } else if (window.location.pathname.includes('/music')) {
-      showView('music', true);
+      showView('music', true, true);
     } else {
-      showView('professional', true);
+      showView('professional', true, true);
     }
   }
 
@@ -143,13 +145,15 @@
 
   function setupNavigation() {
     // Mobile hamburger
-    if (navToggle) {
-      navToggle.addEventListener('click', function () {
-        var links = this.closest('.nav-inner').querySelector('.nav-links');
-        var isOpen = links.classList.toggle('open');
-        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
+    [navToggle, musicNavToggle].forEach(function (toggle) {
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var links = this.closest('.nav-inner').querySelector('.nav-links');
+          var isOpen = links.classList.toggle('open');
+          this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+    });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -165,7 +169,11 @@
           e.preventDefault();
           // Close mobile nav if open
           var openNav = document.querySelector('.nav-links.open');
-          if (openNav) openNav.classList.remove('open');
+          if (openNav) {
+            openNav.classList.remove('open');
+            var toggle = openNav.closest('.nav-inner').querySelector('.nav-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+          }
 
           target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
         }
