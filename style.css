@@ -653,6 +653,22 @@ a.callout-card:hover {
   margin-bottom: 8px;
 }
 
+.pub-citations {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: rgba(92, 107, 79, 0.08);
+  border: 1px solid rgba(92, 107, 79, 0.2);
+  border-radius: 20px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
 .pub-title {
   font-family: var(--font-heading);
   font-size: 1.05rem;
