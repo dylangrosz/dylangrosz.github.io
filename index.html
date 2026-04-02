@@ -49,9 +49,13 @@
   }
   </script>
 
-  <!-- Fonts: professional (render-blocking) -->
+  <!-- Resource hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Fonts: professional (render-blocking) -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
   <!-- Fonts: music section (deferred, non-blocking) -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -138,7 +142,7 @@
 
             <div class="timeline-item" data-brand="apple">
               <div class="timeline-marker">
-                <img class="timeline-logo" src="assets/icons/apple.svg" alt="" aria-hidden="true">
+                <img class="timeline-logo" src="assets/icons/apple.svg" alt="" aria-hidden="true" width="18" height="18" loading="lazy">
               </div>
               <div class="timeline-content">
                 <div class="timeline-header">
@@ -171,7 +175,7 @@
 
             <div class="timeline-item" data-brand="paypal">
               <div class="timeline-marker">
-                <img class="timeline-logo" src="assets/icons/paypal.svg" alt="" aria-hidden="true">
+                <img class="timeline-logo" src="assets/icons/paypal.svg" alt="" aria-hidden="true" width="18" height="18" loading="lazy">
               </div>
               <div class="timeline-content">
                 <div class="timeline-header">
@@ -200,7 +204,7 @@
 
             <div class="timeline-item" data-brand="stanford">
               <div class="timeline-marker">
-                <img class="timeline-logo" src="assets/icons/stanford.svg" alt="" aria-hidden="true">
+                <img class="timeline-logo" src="assets/icons/stanford.svg" alt="" aria-hidden="true" width="18" height="18" loading="lazy">
               </div>
               <div class="timeline-content">
                 <div class="timeline-header">
@@ -237,7 +241,7 @@
 
             <div class="timeline-item" data-brand="stanford-daily">
               <div class="timeline-marker">
-                <img class="timeline-logo" src="assets/icons/stanford-daily.png" alt="" aria-hidden="true">
+                <img class="timeline-logo" src="assets/icons/stanford-daily.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy">
               </div>
               <div class="timeline-content">
                 <div class="timeline-header">
@@ -465,6 +469,6 @@
   </div>
   <div id="keystroke-hint" class="keystroke-hint" aria-hidden="true"></div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
