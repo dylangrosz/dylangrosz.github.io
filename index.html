@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#5c6b4f">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#5c6b4f" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#8a9a7b" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
   <meta name="format-detection" content="telephone=no">
   <title>Dylan Grosz — Machine Learning Scientist</title>
   <meta name="description" content="Dylan Grosz — Machine Learning Scientist at Apple, building on-device AI for Siri. Stanford '20. Published research in NLP, computer vision, and AI for social good.">
@@ -12,6 +13,7 @@
   <link rel="canonical" href="https://dylangrosz.github.io/">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Dylan Grosz">
@@ -52,6 +54,43 @@
     ],
     "knowsAbout": ["Machine Learning", "Speaker Recognition", "Natural Language Processing", "Computer Vision", "On-Device AI"]
   }
+  </script>
+
+  <!-- ScholarlyArticle structured data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "@id": "https://arxiv.org/abs/2006.08661",
+      "name": "Predicting Livelihood Indicators from Community-Generated Street-Level Imagery",
+      "author": {"@type": "Person", "@id": "https://dylangrosz.github.io/#person", "name": "Dylan Grosz"},
+      "url": "https://arxiv.org/abs/2006.08661",
+      "datePublished": "2021",
+      "isPartOf": {"@type": "Event", "name": "AAAI 2021"},
+      "codeRepository": "https://github.com/sustainlab-group/mapillarygcn"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "@id": "https://arxiv.org/abs/2007.04181",
+      "name": "Automatic Detection of Sexist Statements Commonly Used at the Workplace",
+      "author": {"@type": "Person", "@id": "https://dylangrosz.github.io/#person", "name": "Dylan Grosz"},
+      "url": "https://arxiv.org/abs/2007.04181",
+      "datePublished": "2020",
+      "isPartOf": {"@type": "Event", "name": "PAKDD 2020"},
+      "codeRepository": "https://github.com/dylangrosz/Automatic_Detection_of_Sexist_Statements_Commonly_Used_at_the_Workplace"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "name": "Disarming Loaded Words: Addressing Gender Bias in Political Reporting",
+      "author": {"@type": "Person", "@id": "https://dylangrosz.github.io/#person", "name": "Dylan Grosz"},
+      "datePublished": "2020",
+      "isPartOf": {"@type": "Event", "name": "Computation + Journalism 2020"},
+      "codeRepository": "https://github.com/dylangrosz/Disarming_Loaded_Words"
+    }
+  ]
   </script>
 
   <!-- Resource hints -->
@@ -132,7 +171,7 @@
         <div class="container">
           <h2 class="section-heading">About</h2>
           <div class="about-content">
-            <p>I'm a Machine Learning Scientist at <strong>Apple</strong>, where I work on Siri's voice trigger and speaker recognition systems. I build and deploy on-device ML models across every Apple platform — scaling personalized voice recognition to <strong class="metric">40+ languages</strong> worldwide. My current work is proprietary — it spans model training, evaluation infrastructure, fairness research, and deployment across six Apple platforms.</p>
+            <p>I'm a Machine Learning Scientist at <strong>Apple</strong>, where I work on Siri's voice trigger and speaker recognition systems. I build and deploy on-device ML models across every Apple platform — scaling personalized voice recognition to <strong class="metric">40+ locales</strong> worldwide, serving over a billion active devices. My current work is proprietary — it spans model training, evaluation infrastructure, fairness research, and deployment across six Apple platforms.</p>
             <p>I hold a degree in <strong>Symbolic Systems</strong> with an AI concentration from <strong>Stanford University</strong>, where I published research on detecting workplace sexism and using computer vision to predict livelihood indicators in developing regions.</p>
             <p>Previously at <strong>PayPal</strong>, I filed a patent application for a sequence modeling approach to predict and autoscale server resources, and founded the company's internal Machine Learning Guild.</p>
             <p class="about-skills">Python &middot; PyTorch &middot; On-Device ML &middot; Speaker Recognition &middot; NLP &middot; Computer Vision &middot; Model Evaluation &amp; Deployment &middot; Fairness in ML</p>
@@ -168,12 +207,12 @@
                 <a href="https://support.apple.com/en-us/108397" target="_blank" rel="noopener" class="callout-card" style="border-left-color: #333;">
                   <svg class="callout-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                   <div>
-                    <strong style="color: #333;">Recognize My Voice</strong> — Scaled speaker recognition for personalized Siri on HomePod and Apple TV, expanding from a handful of locales to 40+ worldwide
+                    <strong style="color: #333;">Recognize My Voice</strong> — Scaled speaker recognition for personalized Siri on HomePod and Apple TV, expanding from 7 to 40+ locales worldwide
                   </div>
                 </a>
                 <ul class="timeline-details">
                   <li>Architecting and deploying on-device ML models across six Apple platforms</li>
-                  <li>Designed automated ML evaluation and deployment infrastructure, reducing manual engineering time by up to <strong>8x</strong></li>
+                  <li>Designed automated ML evaluation and deployment infrastructure, reducing manual engineering time by up to <strong>8–24x</strong></li>
                   <li>Led cross-functional collaboration across 5+ teams for new platform enablement and locale expansion</li>
                   <li>Research on fairness in speaker recognition, working to reduce bias across demographic groups</li>
                   <li>Mentored new engineers and drove long-term technical roadmaps</li>
@@ -275,7 +314,7 @@
                   </div>
                 </a>
                 <ul class="timeline-details">
-                  <li>Founded and grew the data journalism team to <strong>25 data journalists</strong></li>
+                  <li>Founded and grew the data journalism team, recruiting <strong>55 students</strong></li>
                   <li>Created the Stanford Open Data Portal and administered Stanford community and senior surveys</li>
                   <li>Interviewed artists, covered concerts and album releases, and reviewed the campus music scene as a music critic</li>
                 </ul>
