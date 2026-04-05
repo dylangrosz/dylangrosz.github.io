@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>Page Not Found — Dylan Grosz</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +13,16 @@
     :root {
       --accent: #5c6b4f;
       --text: #2c2c2c;
+      --text-muted: #666;
       --bg: #fafaf8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent: #8a9a7b;
+        --text: #e4e4e0;
+        --text-muted: #8a8a84;
+        --bg: #111211;
+      }
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -36,7 +46,7 @@
     p {
       margin-top: 16px;
       font-size: 1.1rem;
-      color: #666;
+      color: var(--text-muted);
     }
     a {
       display: inline-block;
@@ -54,6 +64,12 @@
       color: #fff;
     }
   </style>
+  <script>
+    // SPA routing: redirect known app routes to index with a query param
+    if (window.location.pathname === '/music' || window.location.pathname === '/music/') {
+      window.location.replace('/?view=music');
+    }
+  </script>
 </head>
 <body>
   <main>

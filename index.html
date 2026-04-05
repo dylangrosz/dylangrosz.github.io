@@ -100,11 +100,11 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
-  <!-- Fonts: professional (render-blocking) -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Fonts: music section (deferred, non-blocking) -->
+  <!-- Fonts: non-blocking (both sections) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Lusitana:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>.reveal { opacity: 1; transform: none; }</style>
   </noscript>
@@ -143,7 +143,10 @@
       <header id="hero">
         <div class="hero-content">
           <div class="hero-photo-wrapper" id="hero-photo-wrapper">
-            <img src="assets/images/profile.jpg" alt="Dylan Grosz" class="hero-photo" id="hero-photo" width="397" height="397" fetchpriority="high">
+            <picture>
+              <source srcset="assets/images/profile.webp" type="image/webp">
+              <img src="assets/images/profile.jpg" alt="Dylan Grosz" class="hero-photo" id="hero-photo" width="320" height="320" fetchpriority="high">
+            </picture>
             <div class="photo-vinyl-overlay" id="vinyl-overlay" aria-hidden="true"></div>
           </div>
           <h1 class="hero-name" id="hero-name" tabindex="-1">Dylan Grosz</h1>
@@ -172,8 +175,8 @@
         <div class="container">
           <h2 class="section-heading">About</h2>
           <div class="about-content">
-            <p>I'm a Machine Learning Scientist at <strong>Apple</strong>, where I work on Siri's voice trigger and speaker recognition systems. I build and deploy on-device ML models across every Apple platform — scaling personalized voice recognition to <strong class="metric">40+ locales</strong> worldwide, serving over a billion active devices. My current work is proprietary — it spans model training, evaluation infrastructure, and fairness research.</p>
-            <p>I studied <strong>Symbolic Systems</strong> with an AI concentration from <strong>Stanford University</strong>, where I published research on detecting workplace sexism and using computer vision to predict livelihood indicators in developing regions.</p>
+            <p>I'm a Machine Learning Scientist at <strong>Apple</strong>, where I work on Siri's voice trigger and speaker recognition systems — building and deploying on-device ML models across iPhone, Mac, HomePod, Apple TV, Apple Watch, and Vision Pro, in <strong class="metric">40+ locales</strong>, reaching over a billion active devices.</p>
+            <p>I have a B.S. in <strong>Symbolic Systems</strong> (AI concentration) from <strong>Stanford University</strong>, where I published research on detecting workplace sexism and using computer vision to predict livelihood indicators in developing regions.</p>
             <p>Previously at <strong>PayPal</strong>, I filed a patent application for a sequence modeling approach to predict and autoscale server resources, and founded the company's internal Machine Learning Guild.</p>
             <p class="about-skills">Python &middot; PyTorch &middot; On-Device ML &middot; Speaker Recognition &middot; NLP &middot; Computer Vision &middot; Model Evaluation &amp; Deployment &middot; Fairness in ML</p>
             <p class="about-coda">I care about building AI that works well for everyone.</p>
