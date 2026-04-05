@@ -28,6 +28,7 @@
   var musicNavToggle = document.getElementById('music-nav-toggle');
   var backBtn = document.getElementById('back-to-pro');
   var musicBack = document.getElementById('music-back');
+  var skipLink = document.querySelector('.skip-link');
 
   // ─── Initialize ─────────────────────────────────
   function init() {
@@ -65,6 +66,9 @@
       // Instant switch (page load)
       proSection.classList.toggle('active', view === 'professional');
       musicSection.classList.toggle('active', view === 'music');
+      proSection.setAttribute('aria-hidden', view === 'music' ? 'true' : 'false');
+      musicSection.setAttribute('aria-hidden', view === 'professional' ? 'true' : 'false');
+      if (skipLink) skipLink.setAttribute('href', view === 'music' ? '#music-main' : '#main-content');
       currentView = view;
       document.body.style.background = view === 'music' ? '#0a0a0a' : (prefersDark ? '#111211' : '#fafaf8');
       window.scrollTo(0, 0);
@@ -108,6 +112,9 @@
     setTimeout(function () {
       proSection.classList.toggle('active', targetView === 'professional');
       musicSection.classList.toggle('active', targetView === 'music');
+      proSection.setAttribute('aria-hidden', targetView === 'music' ? 'true' : 'false');
+      musicSection.setAttribute('aria-hidden', targetView === 'professional' ? 'true' : 'false');
+      if (skipLink) skipLink.setAttribute('href', targetView === 'music' ? '#music-main' : '#main-content');
       currentView = targetView;
       document.body.style.background = targetView === 'music' ? '#0a0a0a' : (prefersDark ? '#111211' : '#fafaf8');
       window.scrollTo(0, 0);
