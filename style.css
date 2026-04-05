@@ -67,7 +67,7 @@ html {
   z-index: 9999;
   padding: 8px 16px;
   background: var(--accent);
-  color: #fff;
+  color: var(--bg);
   font-family: var(--font-heading);
   font-size: 0.85rem;
   border-radius: 4px;
@@ -97,7 +97,7 @@ body {
 }
 
 a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
-a:hover { color: var(--accent-light); }
+a:hover { color: #4e5d44; }
 
 img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
@@ -831,7 +831,7 @@ a.callout-card:hover {
 }
 
 .contact-btn:hover {
-  background: var(--accent-light);
+  background: #4e5d44;
   color: #fff;
   transform: translateY(-1px);
 }
@@ -1265,6 +1265,9 @@ a.callout-card:hover {
   [data-brand="paypal"] .timeline-company        { color: #6b9fd4 !important; }
   [data-brand="stanford"] .timeline-company,
   [data-brand="stanford-daily"] .timeline-company { color: #d06060 !important; }
+
+  /* Global link hover: dark mode accent is light, so use accent-light for hover */
+  a:hover { color: var(--accent-light); }
 }
 
 
