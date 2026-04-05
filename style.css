@@ -1251,7 +1251,8 @@ a.callout-card:hover {
 
   /* Callout cards: inline brand colors have near-zero contrast on dark --accent-bg */
   a.callout-card strong { color: var(--text) !important; }
-  a.callout-card .callout-icon { stroke: var(--accent) !important; }
+  a.callout-card .callout-icon { stroke: var(--accent) !important; fill: none !important; }
+  a.callout-card .callout-icon circle { fill: var(--accent) !important; }
   a.callout-card { border-left-color: var(--accent) !important; }
 
   /* Filled buttons: --accent (#8a9a7b) on white text is 3.0:1, fails WCAG AA */
